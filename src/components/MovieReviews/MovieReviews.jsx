@@ -4,7 +4,7 @@ import { getMovieRewiev } from 'components/services/themoviedbAPI';
 import { Link } from 'components/SharedLayout/SharedLayout.styled';
 
 export const Reviews = () => {
-  const [filmReviews, setFilmReviews] = useState(null);
+  const [filmReviews, setFilmReviews] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
     getMovieRewiev(Number(movieId))
@@ -15,10 +15,10 @@ export const Reviews = () => {
   return (
     <ul>
       {filmReviews.map(({ id, author, content }) => (
-        <Link key={id}>
+        <li key={id}>
           <h4>Author name: {author} </h4>
           <p>{content}</p>
-        </Link>
+        </li>
       ))}
     </ul>
   );

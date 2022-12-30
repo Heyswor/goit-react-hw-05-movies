@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const Cast = () => {
-  const [filmCast, setFilmCast] = useState(null);
+  const [filmCast, setFilmCast] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
     getMovieCredits(Number(movieId))
