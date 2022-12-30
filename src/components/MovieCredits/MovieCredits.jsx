@@ -14,7 +14,7 @@ export const Cast = () => {
 
   return (
     <ul>
-      {/* {filmCast.map(({ credit_id, profile_path, name, character }) => {
+      {filmCast.map(({ credit_id, profile_path, name, character }) => {
         return (
           <li key={credit_id}>
             <img
@@ -27,7 +27,7 @@ export const Cast = () => {
             <p>Character: {character}</p>
           </li>
         );
-      })} */}
+      })}
     </ul>
   );
 };
