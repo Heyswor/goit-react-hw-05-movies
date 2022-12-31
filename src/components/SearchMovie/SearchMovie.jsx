@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import css from './SearchMovie.module.css';
 
 export const SearchMovie = ({ nameSaver }) => {
   const [searchValue, setSearchValue] = useState('');
@@ -21,8 +22,8 @@ export const SearchMovie = ({ nameSaver }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChange} value={searchValue} />
+    <form onSubmit={handleSubmit} className={css.searchForm}>
+      <input type="text" onChange={handleChange} value={searchValue} className={css.searchInput}/>
     </form>
   );
 };

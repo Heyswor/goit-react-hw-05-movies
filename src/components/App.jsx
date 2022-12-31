@@ -2,16 +2,17 @@ import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
-import { MovieDetails } from './MovieDetails/MovieDetails';
-import { Cast } from './MovieCredits/MovieCredits';
-import { Reviews } from './MovieReviews/MovieReviews';
+// import { MovieDetails } from './MovieDetails/MovieDetails';
+// import { Cast } from './MovieCredits/MovieCredits';
+// import { Reviews } from './MovieReviews/MovieReviews';
 import { lazy, Suspense } from 'react';
+import { Loader } from './Loader/Loader';
 
-// const MovieDetails = lazy(() =>
-//   import('../components/MovieDetails/MovieDetails')
-// );
-// const Cast = lazy(() => import('../components/MovieCredits/MovieCredits'));
-// const Reviews = lazy(() => import('../components/MovieReviews/MovieReviews'));
+const MovieDetails = lazy(() =>
+  import('../components/MovieDetails/MovieDetails')
+);
+const Cast = lazy(() => import('../components/MovieCredits/MovieCredits'));
+const Reviews = lazy(() => import('../components/MovieReviews/MovieReviews'));
 
 export const App = () => {
   return (
@@ -24,9 +25,9 @@ export const App = () => {
         <Route
           path="/movies/:movieId"
           element={
-            // <Suspense>
-            <MovieDetails />
-            // </Suspense>
+            <Suspense fallback={<Loader/>}>
+              <MovieDetails />
+            </Suspense>
           }
         >
           <Route path="cast" element={<Cast />} />

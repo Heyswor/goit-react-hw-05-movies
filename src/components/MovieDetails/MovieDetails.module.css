@@ -1,0 +1,13 @@
+.backLink {
+  margin-bottom: 5px;
+}
+
+.detailsList a {
+  display: inline-flex;
+}
+.detailsList {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}

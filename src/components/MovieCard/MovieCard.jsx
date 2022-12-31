@@ -1,3 +1,5 @@
+import css from './MovieCard.module.css';
+
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 export const MovieCard = ({ movie }) => {
@@ -8,19 +10,31 @@ export const MovieCard = ({ movie }) => {
   genres.forEach(({ name }) => genreList.push(name));
 
   return (
-    <>
+    <div className={css.cardDiv}>
       <img
         src={`${BASE_IMG_URL}${poster_path}`}
         alt={title}
-        width="240px"
+        width="360px"
         height="auto"
       />
-      <h2>
-        {title}, Release date: {release_date}
-      </h2>
-      <p>Vote average: {vote_average}</p>
-      <p>Overview: {overview}</p>
-      <p>Genres: {genreList.join(', ')}</p>
-    </>
+      <div className={css.cardFilmInfo}>
+        <ul>
+          <li>
+            <h2>
+              {title} ({release_date.slice(0, 4)})
+            </h2>
+            <p>Vote average: {vote_average}</p>
+          </li>
+          <li>
+            <h3>Overview:</h3>
+            <p> {overview}</p>
+          </li>
+          <li>
+            <h3>Genres:</h3>
+            <p> {genreList.join(', ')}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };

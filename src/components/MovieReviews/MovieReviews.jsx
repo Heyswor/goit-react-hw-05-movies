@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieRewiev } from 'components/services/themoviedbAPI';
-import { Link } from 'components/SharedLayout/SharedLayout.styled';
+import css from './MovieReviews.module.css';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [filmReviews, setFilmReviews] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
     getMovieRewiev(Number(movieId))
-      .then(({results})=>setFilmReviews(results))
+      .then(({ results }) => setFilmReviews(results))
       .catch(error => console.log(error));
   }, [movieId]);
-  console.log(filmReviews);
+
+
+  if (filmReviews.length === 0) {
+    return <p>We don't have any rewievs for this movie</p>;
+  }
   return (
-    <ul>
+    <ul className={css.reviewsList}>
       {filmReviews.map(({ id, author, content }) => (
         <li key={id}>
           <h4>Author name: {author} </h4>
@@ -23,3 +27,5 @@ export const Reviews = () => {
     </ul>
   );
 };
+
+export default Reviews;

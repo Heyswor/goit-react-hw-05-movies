@@ -1,0 +1,19 @@
+.castList {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.castList li {
+  width: 150px;
+  border: 1px solid rgb(177, 175, 175);
+}
+
+.castList img {
+  border: 1px solid rgb(177, 175, 175);
+  display: block;
+  width: 100%;
+  height: auto;
+}

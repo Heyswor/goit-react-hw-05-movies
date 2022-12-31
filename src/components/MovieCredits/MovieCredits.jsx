@@ -1,8 +1,9 @@
 import { getMovieCredits } from 'components/services/themoviedbAPI';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import css from './MovieCredits.module.css';
 
-export const Cast = () => {
+const Cast = () => {
   const [filmCast, setFilmCast] = useState([]);
   const { movieId } = useParams();
   useEffect(() => {
@@ -10,10 +11,10 @@ export const Cast = () => {
       .then(({ cast }) => setFilmCast(cast))
       .catch(error => console.log(error));
   }, [movieId]);
-  console.log(filmCast);
+
 
   return (
-    <ul>
+    <ul className={css.castList}>
       {filmCast.map(({ credit_id, profile_path, name, character }) => {
         return (
           <li key={credit_id}>
@@ -31,3 +32,6 @@ export const Cast = () => {
     </ul>
   );
 };
+
+
+export default Cast;

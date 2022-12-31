@@ -1,0 +1,11 @@
+.searchForm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.searchInput {
+    padding-left: 10px;
+    height: 20px;
+    background-color: azure;
+    border-radius: 5px;
+}

@@ -7,6 +7,7 @@ import { getFilmsByKeyword } from 'components/services/themoviedbAPI';
 import { MovieList } from 'components/MovieList/MovieList';
 
 
+
 export const Movies = () => {
   const [searchFilms, setSearchFilms] = useState([]);
 
@@ -28,7 +29,7 @@ export const Movies = () => {
     <div>
       <Link to={backLink}>Go Back</Link>
       <SearchMovie nameSaver={handleFilmName} />
-      {searchFilms.length > 0 ? <MovieList movies={searchFilms} /> : <p>No</p>}
+      {searchFilms.length > 0 ? <MovieList movies={searchFilms} /> : <p>Nothing to show yet...</p>}
     </div>
   );
 };

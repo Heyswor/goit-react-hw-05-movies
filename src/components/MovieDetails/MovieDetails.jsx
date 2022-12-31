@@ -2,10 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useParams, Outlet } from 'react-router-dom';
 import { getFilmsDetails } from 'components/services/themoviedbAPI';
 import { MovieCard } from 'components/MovieCard/MovieCard';
+import css from './MovieDetails.module.css';
 
 
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [filmDetails, setFilmDetails] = useState(null);
   const { movieId } = useParams();
   const location = useRef(useLocation());
@@ -24,9 +25,9 @@ export const MovieDetails = () => {
 
   return (
     <main>
-      <Link to={location.current.state?.from ?? '/'}>Go back</Link>
+      <Link to={location.current.state?.from ?? '/'} className={css.backLink}>Go back</Link>
       {filmDetails ? <MovieCard movie={filmDetails} /> : <p>NO MOVIES</p>}
-      <ul>
+      <ul className={css.detailsList}>
         <li>
           <Link to="cast">Cast</Link>
         </li>
@@ -38,3 +39,5 @@ export const MovieDetails = () => {
     </main>
   );
 };
+
+export default MovieDetails;

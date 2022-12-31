@@ -1,0 +1,19 @@
+.reviewsList {
+  display: flex;
+
+}
+
+.reviewsList li {
+  border: 1px solid rgb(177, 175, 175);
+  border-radius: 5px;
+  padding: 10px;
+  background-color:azure;
+}
+
+.reviewsList h4 {
+  text-decoration: underline;
+}
+
+.reviewsList p {
+  text-align: justify;
+}

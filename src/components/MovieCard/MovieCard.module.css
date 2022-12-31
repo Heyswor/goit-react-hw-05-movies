@@ -1,0 +1,12 @@
+.cardDiv {
+  display: flex;
+  border: 1px solid rgb(177, 175, 175);
+  border-radius: 5px;
+}
+
+.cardFilmInfo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
