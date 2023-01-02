@@ -9,7 +9,7 @@ export const MovieList = ({ movies }) => {
         return (
           <li key={id}>
             <Link
-              to={`movies/${id}`}
+              to={`/movies/${id}`}
               state={{ from: location }}
               element={<Movies />}
             >
