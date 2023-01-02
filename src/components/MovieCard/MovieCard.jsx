@@ -1,4 +1,5 @@
 import css from './MovieCard.module.css';
+import PropTypes from 'prop-types';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -37,4 +38,8 @@ export const MovieCard = ({ movie }) => {
       </div>
     </div>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.object.isRequired,
 };
